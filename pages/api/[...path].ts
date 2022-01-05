@@ -24,7 +24,7 @@ export default async function handle(
     const accessToken = cookie.get("access_token");
 
     // req.headers.cookie = "";
-
+    console.log("chào");
     if (accessToken) {
       console.log(accessToken);
       req.headers.Authorization = `Bearer ${accessToken}`;

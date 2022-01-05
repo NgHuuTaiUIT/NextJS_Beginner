@@ -19,11 +19,11 @@ export const StudentDetail = ({ studentId }: StudentDetailProps) => {
     }
   );
 
-  const { mutate: addNewStudent } = useMutation(newStudent => {
+  const mutation = useMutation(newStudent => {
     return axiosClient.post(`/students/${studentId}`, newStudent);
   });
   const handleMutateClick = () => {
-    addNewStudent({ name: "Essay" } as any);
+    mutation.mutate({ name: "Essay" } as any);
   };
 
   if (isLoading) return <div>Loading...</div>;
